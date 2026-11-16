@@ -11,6 +11,14 @@ A tiny payments app with an AI review check on its pipeline. Built live in Sessi
 | `.agents/skills/dependency-audit/SKILL.md` | Second skill: explains a `pip-audit` scan. |
 | `.github/workflows/dependency-audit.yml` | Weekly scan that opens a draft PR and never merges. |
 
+Three requirements files, one per job that installs:
+
+| File | Who installs it |
+| --- | --- |
+| `requirements.txt` | The app. This is what the dependency audit scans and bumps. |
+| `requirements-dev.txt` | The gates job: the linter. |
+| `requirements-review.txt` | The agent jobs: the Antigravity SDK. |
+
 Run the gates locally:
 
 ```bash
